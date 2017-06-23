@@ -228,16 +228,6 @@ createAffordances = (index) ->
 	pointers[index].onMouseOut ->
 		document.body.style.cursor = "auto"
 
-createTextAffordances = (index) ->
-	textPointers[index].onMouseOver ->
-		if textPointers[index].visible == true
-			document.body.style.cursor = "text"
-	textPointers[index].onMouseOut ->
-		document.body.style.cursor = "auto"
-
 for layer, i in pointers
 	createAffordances(i)
-
-for layer, i in textPointers
-	createTextAffordances(i)
 	

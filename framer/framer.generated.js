@@ -27,12 +27,12 @@ window.__imported__["PrototypeNew@4x/layers.json.js"] = [
 				"originalName": "analytics",
 				"maskFrame": null,
 				"layerFrame": {
-					"x": -4,
+					"x": -6,
 					"y": 0,
-					"width": 1208,
-					"height": 165
+					"width": 1212,
+					"height": 168
 				},
-				"visible": true,
+				"visible": false,
 				"metadata": {
 					"opacity": 1
 				},

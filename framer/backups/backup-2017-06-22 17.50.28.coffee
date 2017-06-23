@@ -1,7 +1,7 @@
 # Sketch
 sketch = Framer.Importer.load("imported/PrototypeNew@4x", scale: 1)
 
-{analytics, analyticsBack, seo, seoBack, dropdown, d1, d2, d3, d4, d5, d6, d7, d8, d9, d1hover, d2hover, d3hover, d4hover, d5hover, d6hover, d7hover, d8hover, d9hover, pointerTop, settingsZone, headlineZone, masker, New, content, tagmanagerTextGuide, facebookTextGuide, gaTextGuide, metadescriptionTextGuide, keywordsTextGuide, pagetitleTextGuide, urlTextGuide, tagmanagerLineGuide, facebookLineGuide, gaLineGuide, metadescriptionLineGuide, keywordsLineGuide, pagetitleLineGuide, urlLineGuide, tagmanager, facebook, ga, metadescription, keywords, pagetitle, url, seoBg, analyticsBg, pointerAddNew} = sketch
+{analytics, analyticsBack, seo, seoBack, dropdown, d1, d2, d3, d4, d5, d6, d7, d8, d9, d1hover, d2hover, d3hover, d4hover, d5hover, d6hover, d7hover, d8hover, d9hover, pointerTop, settingsZone, headlineZone, masker, New, content, tagmanagerTextGuide, facebookTextGuide, gaTextGuide, metadescriptionTextGuide, keywordsTextGuide, pagetitleTextGuide, urlTextGuide, tagmanagerLineGuide, facebookLineGuide, gaLineGuide, metadescriptionLineGuide, keywordsLineGuide, pagetitleLineGuide, urlLineGuide, tagmanager, facebook, ga, metadescription, keywords, pagetitle, url, seoBg, analyticsBg} = sketch
 # Document Setup
 document.body.style.cursor = "auto"
 Framer.Extras.Hints.disable()
@@ -48,9 +48,6 @@ for layer, i in back
 
 headlineZone.onClick ->
 	masker.visible = false
-
-content.onClick ->
-	dropdown.visible = false
 # Dropdown
 ds = [d1, d2, d3, d4, d5, d6, d7, d8, d9]
 dhovers = [d1hover, d2hover, d3hover, d4hover, d5hover, d6hover, d7hover, d8hover, d9hover]
@@ -214,12 +211,10 @@ for layer, i in textGuides
 			input.bringToFront()
 			input.focus()
 
-
-
 # Affordances
 
-pointers = [analyticsBack, seoBack, dropdown, pointerTop, pointerAddNew, headlineZone, settingsZone]
-textPointers = [tagmanager, facebook, ga, metadescription, keywords, pagetitle, url]
+pointers = [analyticsBack, seoBack, dropdown, pointerTop, ]
+
 
 createAffordances = (index) ->
 	pointers[index].onMouseOver ->
@@ -228,16 +223,5 @@ createAffordances = (index) ->
 	pointers[index].onMouseOut ->
 		document.body.style.cursor = "auto"
 
-createTextAffordances = (index) ->
-	textPointers[index].onMouseOver ->
-		if textPointers[index].visible == true
-			document.body.style.cursor = "text"
-	textPointers[index].onMouseOut ->
-		document.body.style.cursor = "auto"
-
 for layer, i in pointers
 	createAffordances(i)
-
-for layer, i in textPointers
-	createTextAffordances(i)
-	
